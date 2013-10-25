@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Backbone.JS-powered Blog ON RAILS</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <script id="app-view-template" type="text/x-handlebars-template">
+    <h1>Recent Posts</h1>
+    <ul id="posts"></ul>
+  </script>
+  <script id="post-list-view-template" type="text/x-handlebars-template">
+    {{title}}
+  </script>
+  <script id="post-view-template" type="text/x-handlebars-template">
+    <div class="post">
+      <h1 class="title">{{title}}</h1>
+      <h3 class="slug">{{slug}}</h3>
+      <div class="content">{{{content}}}</div>
+    </div>
+  </script>
+
+
+  <!-- This will be our main container -->
+  <div id="main">
+  </div>
+
+
+  <%= javascript_include_tag "application" %>
+
+</body>
+</html>
