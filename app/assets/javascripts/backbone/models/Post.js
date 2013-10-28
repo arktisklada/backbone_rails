@@ -8,7 +8,17 @@ app.Post = Backbone.Model.extend({
   defaults: {
     title: 'New post'
   },
+  comments: new Array(),
 
-  urlRoot: '/posts'
+  urlRoot: '/posts',
+
+  fetchComments: function() {
+    this.comments = new app.Comments();
+    this.comments.post_id = this.get('id');
+    var model = this;
+    this.comments.fetch().done(function() {
+      model.trigger('comments');
+    });
+  }
 
 });

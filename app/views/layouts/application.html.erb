@@ -19,8 +19,13 @@
       <h1 class="title">{{title}}</h1>
       <h3 class="slug">{{slug}}</h3>
       <div class="content">{{{content}}}</div>
+      <ul class="comments"></ul>
     </div>
   </script>
+  <script id="comment-list-view-template" type="text/x-handlebars-template">
+    <p>{{created_at}} - {{content}}</p>
+  </script>
+
 
 
   <!-- This will be our main container -->
